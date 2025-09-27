@@ -25,28 +25,30 @@ Execute Django admin and create details for 10 books
 ## PROGRAM
 ```
 admin.py
-
 from django.contrib import admin
-from .model import Cars,CarsAdmin
-admin.site.register(Cars,CarsAdmin)
+from.models import carshowroom,carshowroomAdmin
+admin.site.register(carshowroom,carshowroomAdmin)
 
-models.py
-
-
-class Cars (models.Model):
-    car_id=models.IntegerField (primary_key=True)
-    car_models=models
-    car_models.CharField (max_length=20)
-    email=models.EmailField()
-    dop=models.DateField()
-    car_Type=models.CharField(max_length=10)
-class CarsAdmin(admin.ModelAdmin):
-    list_display=["car_id","car_models","email","dop","car_Type"]
+model.py
+from django.db import models
+from django.contrib import admin
+class carshowroom(models.Model):
+    plate_number = models.IntegerField(primary_key=True)
+    color = models.CharField(max_length=12)
+    amount = models.IntegerField()
+    type = models.CharField(max_length=20)
+    year = models.IntegerField()
+class carshowroomAdmin(admin.ModelAdmin):
+    list_display = ["plate_number","color","amount","type","year"]admin.py
+from django.contrib import admin
+from.models import carshowroom,carshowroomAdmin
+admin.site.register(carshowroom,carshowroomAdmin)
+     
 ```
 
 ## OUTPUT
+![alt text](<Screenshot 2025-09-27 190908.png>)
 
-![alt text](<Screenshot (2).png>)
 
 
 ## RESULT
